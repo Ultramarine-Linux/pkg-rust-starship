@@ -105,7 +105,7 @@ echo 'git-core'
 * Fri Dec 13 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 0.30.1-2
 - Update to 0.30.1
 
-* Fri Dec 13 21:01:50 EET 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 0.29.0-1
+* Fri Dec 13 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 0.29.0-1
 - Update to 0.29.0
 
 * Wed Dec 04 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 0.27.0-1
