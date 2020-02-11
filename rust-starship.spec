@@ -4,8 +4,8 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.32.1
-Release:        2%{?dist}
+Version:        0.35.1
+Release:        1%{?dist}
 Summary:        Cross-shell prompt for astronauts
 
 # Upstream license specification: ISC
@@ -14,6 +14,7 @@ URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
 # * Use default features (OpenSSL) for reqwest, essentially revert of https://github.com/starship/starship/commit/d1b725a47cda1047546fb3998ff8f8a61ed4a48b
+# * Update sysinfo to 0.11, https://github.com/starship/starship/commit/9292ec63d489966312d24c67b011668fe4efec4b
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -102,6 +103,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Tue Feb 11 13:28:47 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.35.1-1
+- Update to 0.35.1
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.32.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
