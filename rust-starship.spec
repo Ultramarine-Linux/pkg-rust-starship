@@ -15,6 +15,7 @@ Source:         %{crates_source}
 # Initial patched metadata
 # * Use default features (OpenSSL) for reqwest, essentially revert of https://github.com/starship/starship/commit/d1b725a47cda1047546fb3998ff8f8a61ed4a48b
 # * Update sysinfo to 0.11, https://github.com/starship/starship/commit/9292ec63d489966312d24c67b011668fe4efec4b
+# * Update os_info to 2, https://github.com/starship/starship/commit/0e8b1c659dfcd8ceb1c753c3c6b396ae2f7f7ddf
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
