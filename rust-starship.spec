@@ -4,9 +4,9 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.35.1
+Version:        0.36.0
 Release:        1%{?dist}
-Summary:        Cross-shell prompt for astronauts
+Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
 License:        ISC
@@ -14,8 +14,6 @@ URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
 # * Use default features (OpenSSL) for reqwest, essentially revert of https://github.com/starship/starship/commit/d1b725a47cda1047546fb3998ff8f8a61ed4a48b
-# * Update sysinfo to 0.11, https://github.com/starship/starship/commit/9292ec63d489966312d24c67b011668fe4efec4b
-# * Update os_info to 2, https://github.com/starship/starship/commit/0e8b1c659dfcd8ceb1c753c3c6b396ae2f7f7ddf
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -26,7 +24,7 @@ BuildArch:      noarch
 BuildRequires:  rust-packaging
 
 %global _description %{expand:
-Cross-shell prompt for astronauts. ☄🌌️.}
+Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️.}
 
 %description %{_description}
 
@@ -104,6 +102,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Thu Feb 13 05:20:12 EET 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.36.0-1
+- Update to 0.36.0
+
 * Tue Feb 11 13:28:47 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.35.1-1
 - Update to 0.35.1
 
