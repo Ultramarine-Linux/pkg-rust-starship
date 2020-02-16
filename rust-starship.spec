@@ -5,7 +5,7 @@
 
 Name:           rust-%{crate}
 Version:        0.36.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -31,6 +31,16 @@ Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌
 %if ! %{__cargo_skip_build}
 %package     -n %{crate}
 Summary:        %{summary}
+# Install all deps (without check), grab their licenses and make it simple
+# * ASL 2.0
+# * ASL 2.0 or Boost
+# * ASL 2.0 or MIT
+# * ISC
+# * MIT
+# * MIT or ASL 2.0
+# * (MIT or ASL 2.0) and BSD
+# * Unlicense or MIT
+License:        ISC and ASL 2.0 and MIT and BSD
 
 %description -n %{crate} %{_description}
 
@@ -102,6 +112,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Sun Feb 16 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.36.0-2
+- Fixup license list
+
 * Thu Feb 13 05:20:12 EET 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.36.0-1
 - Update to 0.36.0
 
