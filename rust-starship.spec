@@ -4,8 +4,8 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.36.0
-Release:        2%{?dist}
+Version:        0.36.1
+Release:        1%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -112,6 +112,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Thu Feb 20 09:08:02 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.36.1-1
+- Update to 0.36.1
+
 * Sun Feb 16 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.36.0-2
 - Fixup license list
 

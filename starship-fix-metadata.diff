@@ -1,5 +1,5 @@
---- starship-0.36.0/Cargo.toml	2020-02-13T02:48:54+00:00
-+++ starship-0.36.0/Cargo.toml	2020-02-13T03:20:11.724509+00:00
+--- starship-0.36.1/Cargo.toml	2020-02-19T21:22:43+00:00
++++ starship-0.36.1/Cargo.toml	2020-02-20T08:08:02.380790+00:00
 @@ -84,8 +84,7 @@
  
  [dependencies.reqwest]
@@ -9,4 +9,4 @@
 +features = ["blocking"]
  
  [dependencies.serde_json]
- version = "1.0.47"
+ version = "1.0.48"
