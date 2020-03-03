@@ -1,12 +1,20 @@
---- starship-0.36.1/Cargo.toml	2020-02-19T21:22:43+00:00
-+++ starship-0.36.1/Cargo.toml	2020-02-20T08:08:02.380790+00:00
-@@ -84,8 +84,7 @@
+--- starship-0.37.0/Cargo.toml	2020-03-02T03:33:46+00:00
++++ starship-0.37.0/Cargo.toml	2020-03-03T22:38:41.485132+00:00
+@@ -54,7 +54,7 @@
+ version = "0.2.1"
+ 
+ [dependencies.git2]
+-version = "0.11.0"
++version = "0.12.0"
+ features = []
+ default-features = false
+ 
+@@ -87,7 +87,7 @@
  
  [dependencies.reqwest]
  version = "0.10.1"
 -features = ["blocking", "rustls-tls"]
--default-features = false
 +features = ["blocking"]
+ default-features = false
  
  [dependencies.serde_json]
- version = "1.0.48"

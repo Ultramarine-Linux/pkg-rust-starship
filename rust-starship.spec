@@ -4,7 +4,7 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.36.1
+Version:        0.37.0
 Release:        1%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
@@ -14,6 +14,7 @@ URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
 # * Use default features (OpenSSL) for reqwest, essentially revert of https://github.com/starship/starship/commit/d1b725a47cda1047546fb3998ff8f8a61ed4a48b
+# * Bump git2 to 0.12, https://github.com/starship/starship/pull/963
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -112,6 +113,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Tue Mar 03 2020 Josh Stone <jistone@redhat.com> - 0.37.0-1
+- Update to 0.37.0
+
 * Thu Feb 20 09:08:02 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.36.1-1
 - Update to 0.36.1
 
