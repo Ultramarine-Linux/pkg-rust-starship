@@ -14,7 +14,7 @@ URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
 # * Use default features (OpenSSL) for reqwest, essentially revert of https://github.com/starship/starship/commit/d1b725a47cda1047546fb3998ff8f8a61ed4a48b
-# * Bump git2 to 0.12, https://github.com/starship/starship/pull/963
+# * Update git2 to 0.13, https://github.com/starship/starship/commit/d5cf340a72bcb966cd68510f00742e5ba6111453
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -113,6 +113,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Thu Mar 19 11:08:35 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.37.0-2
+- Update git2 to 0.13
+
 * Tue Mar 03 2020 Josh Stone <jistone@redhat.com> - 0.37.0-1
 - Update to 0.37.0
 
