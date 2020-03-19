@@ -5,7 +5,7 @@
 
 Name:           rust-%{crate}
 Version:        0.37.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
