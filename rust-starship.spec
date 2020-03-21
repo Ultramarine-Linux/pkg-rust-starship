@@ -4,8 +4,8 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.37.0
-Release:        2%{?dist}
+Version:        0.38.0
+Release:        1%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -13,8 +13,7 @@ License:        ISC
 URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
-# * Use default features (OpenSSL) for reqwest, essentially revert of https://github.com/starship/starship/commit/d1b725a47cda1047546fb3998ff8f8a61ed4a48b
-# * Update git2 to 0.13, https://github.com/starship/starship/commit/d5cf340a72bcb966cd68510f00742e5ba6111453
+# * No vendored
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -40,8 +39,9 @@ Summary:        %{summary}
 # * MIT
 # * MIT or ASL 2.0
 # * (MIT or ASL 2.0) and BSD
+# * MPLv2.0
 # * Unlicense or MIT
-License:        ISC and ASL 2.0 and MIT and BSD
+License:        ISC and ASL 2.0 and MIT and BSD and MPLv2.0
 
 %description -n %{crate} %{_description}
 
@@ -77,6 +77,18 @@ which use "default" feature of "%{crate}" crate.
 %files       -n %{name}+default-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
+%package     -n %{name}+attohttpc-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+attohttpc-devel %{_description}
+
+This package contains library source intended for building other packages
+which use "attohttpc" feature of "%{crate}" crate.
+
+%files       -n %{name}+attohttpc-devel
+%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
+
 %package     -n %{name}+battery-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -87,6 +99,30 @@ This package contains library source intended for building other packages
 which use "battery" feature of "%{crate}" crate.
 
 %files       -n %{name}+battery-devel
+%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
+
+%package     -n %{name}+http-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+http-devel %{_description}
+
+This package contains library source intended for building other packages
+which use "http" feature of "%{crate}" crate.
+
+%files       -n %{name}+http-devel
+%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
+
+%package     -n %{name}+native-tls-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+native-tls-devel %{_description}
+
+This package contains library source intended for building other packages
+which use "native-tls" feature of "%{crate}" crate.
+
+%files       -n %{name}+native-tls-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
 %prep
@@ -113,6 +149,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Sat Mar 21 07:37:04 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.38.0-1
+- Update to 0.38.0
+
 * Thu Mar 19 11:08:35 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.37.0-2
 - Update git2 to 0.13
 

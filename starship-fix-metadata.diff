@@ -1,20 +1,10 @@
---- starship-0.37.0/Cargo.toml	2020-03-02T03:33:46+00:00
-+++ starship-0.37.0/Cargo.toml	2020-03-19T10:08:34.936581+00:00
-@@ -54,7 +54,7 @@
- version = "0.2.1"
+--- starship-0.38.0/Cargo.toml	2020-03-19T19:44:10+00:00
++++ starship-0.38.0/Cargo.toml	2020-03-21T06:47:35.673026+00:00
+@@ -133,7 +133,6 @@
+ [features]
+ default = ["battery", "http"]
+ http = ["attohttpc"]
+-tls-vendored = ["native-tls/vendored"]
+ [badges.is-it-maintained-issue-resolution]
+ repository = "starship/starship"
  
- [dependencies.git2]
--version = "0.11.0"
-+version = "0.13.0"
- features = []
- default-features = false
- 
-@@ -87,7 +87,7 @@
- 
- [dependencies.reqwest]
- version = "0.10.1"
--features = ["blocking", "rustls-tls"]
-+features = ["blocking"]
- default-features = false
- 
- [dependencies.serde_json]
