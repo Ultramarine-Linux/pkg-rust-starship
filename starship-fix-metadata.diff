@@ -1,5 +1,14 @@
---- starship-0.38.0/Cargo.toml	2020-03-19T19:44:10+00:00
-+++ starship-0.38.0/Cargo.toml	2020-03-21T06:47:35.673026+00:00
+--- starship-0.38.1/Cargo.toml	2020-03-22T22:09:36+00:00
++++ starship-0.38.1/Cargo.toml	2020-03-24T06:10:12.665322+00:00
+@@ -102,7 +102,7 @@
+ version = "0.1.0"
+ 
+ [dependencies.sysinfo]
+-version = "0.11.7"
++version = "0.12.0"
+ 
+ [dependencies.term_size]
+ version = "0.3.1"
 @@ -133,7 +133,6 @@
  [features]
  default = ["battery", "http"]
