@@ -4,7 +4,7 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.41.0
+Version:        0.41.1
 Release:        1%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
@@ -31,14 +31,13 @@ Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌
 %if ! %{__cargo_skip_build}
 %package     -n %{crate}
 Summary:        %{summary}
-# Install all deps (without check), grab their licenses and make it simple
+# * (MIT or ASL 2.0) and BSD
 # * ASL 2.0
 # * ASL 2.0 or Boost
 # * ASL 2.0 or MIT
 # * ISC
 # * MIT
 # * MIT or ASL 2.0
-# * (MIT or ASL 2.0) and BSD
 # * MPLv2.0
 # * Unlicense or MIT
 License:        ISC and ASL 2.0 and MIT and BSD and MPLv2.0
@@ -149,6 +148,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Thu May 14 19:31:23 CEST 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.41.1-1
+- Update to 0.41.1
+
 * Tue May 05 2020 Josh Stone <jistone@redhat.com> - 0.41.0-1
 - Update to 0.41.0
 

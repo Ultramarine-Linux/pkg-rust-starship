@@ -1,5 +1,5 @@
---- starship-0.40.1/Cargo.toml	2020-04-11T20:12:00+00:00
-+++ starship-0.40.1/Cargo.toml	2020-04-15T06:44:33.196576+00:00
+--- starship-0.41.1/Cargo.toml	2020-05-14T16:53:48+00:00
++++ starship-0.41.1/Cargo.toml	2020-05-14T17:31:23.731656+00:00
 @@ -140,7 +140,6 @@
  [features]
  default = ["battery", "http"]
