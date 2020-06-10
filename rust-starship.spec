@@ -4,7 +4,7 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.41.3
+Version:        0.42.0
 Release:        1%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
@@ -148,6 +148,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Wed Jun 10 2020 Josh Stone <jistone@redhat.com> - 0.42.0-1
+- Update to 0.42.0
+
 * Sat May 16 19:47:50 CEST 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.41.3-1
 - Update to 0.41.3
 
