@@ -5,7 +5,7 @@
 
 Name:           rust-%{crate}
 Version:        0.42.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -14,6 +14,7 @@ URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
 # * No vendored
+# * Bump attohttpc to 0.15 (already upstream)
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -148,6 +149,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Tue Sep 29 2020 Fabio Valentini <decathorpe@gmail.com> - 0.42.0-5
+- Bump attohttpc to 0.15.
+
 * Sun Aug 16 15:01:50 GMT 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.42.0-4
 - Rebuild
 
