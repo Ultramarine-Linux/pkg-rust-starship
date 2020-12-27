@@ -1,19 +1,26 @@
---- starship-0.41.3/Cargo.toml	2020-05-15T15:10:30+00:00
-+++ starship-0.41.3/Cargo.toml	2020-05-16T17:47:49.948287+00:00
-@@ -35,7 +35,7 @@ path = "src/main.rs"
- version = "0.12.1"
+--- starship-0.47.0/Cargo.toml	2020-11-15T17:24:54+00:00
++++ starship-0.47.0/Cargo.toml	2020-12-27T10:41:59.006999+00:00
+@@ -69,10 +69,6 @@
+ [dependencies.log]
+ version = "0.4.11"
+ features = ["std"]
+-
+-[dependencies.native-tls]
+-version = "0.2"
+-optional = true
  
- [dependencies.attohttpc]
--version = "0.14.0"
-+version = "0.15.0"
- features = ["tls", "form"]
- optional = true
- default-features = false
-@@ -140,7 +140,6 @@ version = "3.1.0"
+ [dependencies.notify-rust]
+ version = "4.0.0"
+@@ -150,12 +146,8 @@
  [features]
  default = ["battery", "http"]
  http = ["attohttpc"]
 -tls-vendored = ["native-tls/vendored"]
+ [target."cfg(not(windows))".dependencies.nix]
+ version = "0.19.0"
+-[target."cfg(windows)".dependencies.winapi]
+-version = "0.3"
+-features = ["winuser", "securitybaseapi", "processthreadsapi", "handleapi", "impl-default"]
  [badges.is-it-maintained-issue-resolution]
  repository = "starship/starship"
  
