@@ -128,8 +128,6 @@ which use "notify-rust" feature of "%{crate}" crate.
 %cargo_prep
 
 %generate_buildrequires
-# https://pagure.io/fedora-rust/rust2rpm/issue/70
-echo 'rust-clap2-devel' 'rust-clap2+default-devel'
 %cargo_generate_buildrequires
 %if %{with check}
 echo 'git-core'
