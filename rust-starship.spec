@@ -5,7 +5,7 @@
 
 Name:           rust-%{crate}
 Version:        0.47.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -145,6 +145,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Mon Dec 28 13:33:06 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.47.0-2
+- Rebuild
+
 * Sun Dec 27 11:41:59 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.47.0-1
 - Update to 0.47.0 (Fixes: RHBZ#1851477)
 
