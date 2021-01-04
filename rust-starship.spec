@@ -4,8 +4,8 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.47.0
-Release:        3%{?dist}
+Version:        0.48.0
+Release:        1%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -13,7 +13,8 @@ License:        ISC
 URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
-# * No vendored
+# * No vendored dependencies
+# * No Windows deps
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -33,19 +34,21 @@ Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌
 Summary:        %{summary}
 # ASL 2.0
 # ASL 2.0 or Boost
+# ASL 2.0 or MIT
 # ISC
 # MIT
 # MIT or ASL 2.0
 # MIT or ASL 2.0 or zlib
 # MPLv2.0
 # Unlicense or MIT
+# zlib or ASL 2.0 or MIT
 License:        ISC and ASL 2.0 and MIT and MPLv2.0
 
 %description -n %{crate} %{_description}
 
 %files       -n %{crate}
 %license LICENSE
-%doc README.md
+%doc README.md CONTRIBUTING.md
 %{_bindir}/starship
 %endif
 
@@ -145,6 +148,10 @@ echo 'git-core'
 %endif
 
 %changelog
+* Mon Jan 04 2021 Fabio Valentini <decathorpe@gmail.com> - 0.48.0-1
+- Update to version 0.48.0.
+- Fixes RHBZ#1912030
+
 * Tue Dec 29 14:21:51 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.47.0-3
 - Rebuild against libgit2 1.1.x
 
