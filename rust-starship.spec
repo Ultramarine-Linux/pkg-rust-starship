@@ -5,7 +5,7 @@
 
 Name:           rust-%{crate}
 Version:        0.48.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -148,6 +148,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.48.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Mon Jan 04 2021 Fabio Valentini <decathorpe@gmail.com> - 0.48.0-1
 - Update to version 0.48.0.
 - Fixes RHBZ#1912030
