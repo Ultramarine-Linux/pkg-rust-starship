@@ -1,5 +1,5 @@
 --- starship-0.48.0/Cargo.toml	2021-01-02T20:42:20+00:00
-+++ starship-0.48.0/Cargo.toml	2021-01-04T13:17:56.659430+00:00
++++ starship-0.48.0/Cargo.toml	2021-03-01T18:35:48.564180+00:00
 @@ -69,10 +69,6 @@
  [dependencies.log]
  version = "0.4.11"
@@ -17,10 +17,11 @@
  http = ["attohttpc"]
 -tls-vendored = ["native-tls/vendored"]
  [target."cfg(not(windows))".dependencies.nix]
- version = "0.19.1"
+-version = "0.19.1"
 -[target."cfg(windows)".dependencies.winapi]
 -version = "0.3.9"
 -features = ["winuser", "securitybaseapi", "processthreadsapi", "handleapi", "impl-default"]
++version = "0.20.0"
  [badges.is-it-maintained-issue-resolution]
  repository = "starship/starship"
  

@@ -5,7 +5,7 @@
 
 Name:           rust-%{crate}
 Version:        0.48.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
@@ -15,6 +15,8 @@ Source:         %{crates_source}
 # Initial patched metadata
 # * No vendored dependencies
 # * No Windows deps
+# * Bump nix from 0.19.1 to 0.20.0:
+#   https://github.com/starship/starship/commit/4d41677
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -148,6 +150,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Mon Mar 01 2021 Fabio Valentini <decathorpe@gmail.com> - 0.48.0-3
+- Bump nix to 0.20.0.
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.48.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
