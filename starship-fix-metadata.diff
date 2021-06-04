@@ -1,8 +1,8 @@
---- starship-0.48.0/Cargo.toml	2021-01-02T20:42:20+00:00
-+++ starship-0.48.0/Cargo.toml	2021-03-01T18:35:48.564180+00:00
-@@ -69,10 +69,6 @@
+--- starship-0.54.0/Cargo.toml	1970-01-01T00:00:00+00:00
++++ starship-0.54.0/Cargo.toml	2021-06-04T08:49:46.232953+00:00
+@@ -71,10 +71,6 @@
  [dependencies.log]
- version = "0.4.11"
+ version = "0.4.14"
  features = ["std"]
 -
 -[dependencies.native-tls]
@@ -10,18 +10,17 @@
 -optional = true
  
  [dependencies.notify-rust]
- version = "4.0.0"
-@@ -157,12 +153,8 @@
+ version = "4.5.1"
+@@ -174,12 +170,8 @@
  [features]
  default = ["battery", "http"]
  http = ["attohttpc"]
 -tls-vendored = ["native-tls/vendored"]
  [target."cfg(not(windows))".dependencies.nix]
--version = "0.19.1"
+ version = "0.20.0"
 -[target."cfg(windows)".dependencies.winapi]
 -version = "0.3.9"
 -features = ["winuser", "securitybaseapi", "processthreadsapi", "handleapi", "impl-default"]
-+version = "0.20.0"
  [badges.is-it-maintained-issue-resolution]
  repository = "starship/starship"
  
