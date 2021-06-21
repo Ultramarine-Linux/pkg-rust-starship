@@ -4,17 +4,22 @@
 %global crate starship
 
 Name:           rust-%{crate}
-Version:        0.54.0
+Version:        0.55.0
 Release:        1%{?dist}
-Summary:        Minimal, blazing-fast, and infinitely customizable shell prompt
+Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 # Upstream license specification: ISC
 License:        ISC
 URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
-# * do not use vendored feature of native-tls
-# * drop windows-specific dependencies
+#   * do not use vendored feature of native-tls
+#   * drop windows-specific dependencies
+#   Downgrade deps:
+#     * semver: 0.11
+#     * urlencoding: 1.3.1
+#     * versions: 3.0.1
+#     * nix: 0.20.0
 Patch0:         starship-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
@@ -149,6 +154,9 @@ echo 'git-core'
 %endif
 
 %changelog
+* Mon Jun 21 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.55.0-1
+- build(update): 0.55.0
+
 * Fri Jun 04 2021 Fabio Valentini <decathorpe@gmail.com> - 0.54.0-1
 - Update to version 0.54.0.
 - Fixes RHBZ#1922452
