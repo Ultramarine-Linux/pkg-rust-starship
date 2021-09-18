@@ -138,20 +138,21 @@ which use "notify-rust" feature of "%{crate}" crate.
 %cargo_prep
 
 %generate_buildrequires
-%cargo_generate_buildrequires
+%cargo_generate_buildrequires -a
 %if %{with check}
 echo 'git-core'
 %endif
 
 %build
-%cargo_build
+%cargo_build -a
+
 
 %install
-%cargo_install
+%cargo_install -a
 
 %if %{with check}
 %check
-%cargo_test
+%cargo_test -a
 %endif
 
 %changelog
