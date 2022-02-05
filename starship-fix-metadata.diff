@@ -1,43 +1,44 @@
---- starship-0.56.0/Cargo.toml	1970-01-01T00:00:00+00:00
-+++ starship-0.56.0/Cargo.toml	2021-08-01T22:44:27.237226+00:00
-@@ -65,16 +65,12 @@
+--- starship-1.2.1/Cargo.toml	1970-01-01T00:00:01+00:00
++++ starship-1.2.1/Cargo.toml	2022-02-05T11:09:48.527381+00:00
+@@ -55,11 +55,11 @@
+ version = "0.2.1"
+ 
+ [dependencies.git2]
+-version = "0.13.25"
++version = "0.13.20"
  default-features = false
  
  [dependencies.indexmap]
--version = "1.7.0"
-+version = "1.6.2"
+-version = "1.8.0"
++version = "1.7.0"
  features = ["serde"]
  
  [dependencies.log]
- version = "0.4.14"
- features = ["std"]
--
--[dependencies.native-tls]
--version = "0.2.7"
--optional = true
+@@ -118,7 +118,7 @@
+ version = "1.0.74"
  
- [dependencies.notify-rust]
- version = "4.5.1"
-@@ -166,8 +162,6 @@
+ [dependencies.sha-1]
+-version = "0.10.0"
++version = "0.9.8"
  
+ [dependencies.shadow-rs]
+ version = "0.8.1"
+@@ -167,7 +167,7 @@
  [dependencies.yaml-rust]
  version = "0.4.5"
--[dev-dependencies.mockall]
--version = "0.10"
+ [dev-dependencies.mockall]
+-version = "0.11"
++version = "0.10"
  
  [dev-dependencies.tempfile]
  version = "3.2.0"
-@@ -177,12 +171,8 @@
- [features]
- default = ["battery", "http"]
- http = ["attohttpc"]
--tls-vendored = ["native-tls/vendored"]
+@@ -179,9 +179,6 @@
+ default = ["battery"]
  [target."cfg(not(windows))".dependencies.nix]
--version = "0.21.0"
+ version = "0.23.1"
 -[target."cfg(windows)".dependencies.winapi]
 -version = "0.3.9"
 -features = ["winuser", "securitybaseapi", "processthreadsapi", "handleapi", "impl-default"]
-+version = "0.22.0"
  [badges.is-it-maintained-issue-resolution]
  repository = "starship/starship"
  
