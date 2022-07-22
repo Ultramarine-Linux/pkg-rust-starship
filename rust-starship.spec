@@ -5,6 +5,11 @@
 # don't generate Requires for /usr/bin/pwsh / PowerShell
 %global __requires_exclude_from ^%{cargo_registry}/%{crate}-%{version_no_tilde}/src/init/starship\\.ps1$
 
+# reduce debuginfo verbosity on armv7hl to work around rustc OOM problems
+%ifarch %{arm}
+%global rustflags_debuginfo 1
+%endif
+
 %global crate starship
 
 Name:           rust-%{crate}
@@ -17,10 +22,9 @@ License:        ISC
 URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
 # Initial patched metadata
+# * bump open from 2.0.2 to 3.0.2:
+#   https://github.com/starship/starship/commit/4211a99
 # * temporarily downgrade git2 dependency from 0.13.25 to 0.13.20
-# * temporarily downgrade indexmap dependency from 1.8.0 to 1.7.0
-# * temporarily downgrade sha-1 dependency from 0.10.0 to 0.9.8
-# * temporarily downgrade mockall dev-dependency from 0.11 to 0.10
 # * drop windows-specific dependencies
 Patch0:         starship-fix-metadata.diff
 
@@ -44,7 +48,7 @@ Summary:        %{summary}
 # MIT or ASL 2.0
 # MIT or ASL 2.0 or zlib
 # Unlicense or MIT
-#  zlib or ASL 2.0 or MIT
+# zlib or ASL 2.0 or MIT
 License:        ISC and ASL 2.0 and MIT
 
 %description -n %{crate} %{_description}
