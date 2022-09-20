@@ -1,0 +1,6 @@
+[rust-starship]
+spec = "rust-starship.spec"
+build_method = "mock"
+owner = "cappy"
+git_repo = "https://github.com/ultramarine-linux/pkg-rust-starship"
+build_script = "./prepare.sh"
