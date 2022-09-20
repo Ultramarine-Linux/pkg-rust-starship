@@ -1,4 +1,6 @@
 #!/bin/bash
+
+sudo dnf install -y cargo rustc
 set -x
 spectool -g rust-starship.spec || true
 
