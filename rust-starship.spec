@@ -20,6 +20,9 @@ Patch:          starship-fix-metadata-auto.diff
 ExclusiveArch:  %{rust_arches}
 
 BuildRequires:  rust-packaging >= 21
+BuildRequires:  cmake
+BuildRequires:  pkgconfig
+BuildRequires:  git-core
 
 %global _description %{expand:
 Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️.}

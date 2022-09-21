@@ -1,15 +1,23 @@
 #!/bin/bash
-dnf install -y cargo rustc
+#dnf install -y cargo rustc
+
+CRATE="starship-1.10.3"
+
+# Create temp folder
+TEMP=$(mktemp -d)
+
 set -x
 spectool -g rust-starship.spec || true
 
 FOLDER="$PWD"
 
 # Extract the tarball to /tmp/src/
-mkdir -p /tmp/src
-tar -xzf ./starship-1.10.3.crate -C /tmp/src
+mkdir -p $TEMP
+tar -xzf ./$CRATE.crate -C $TEMP
 
-pushd /tmp/src/* || exit
+ls -la $TEMP
+
+pushd $TEMP/$CRATE || exit
 
 cargo vendor
 
@@ -27,5 +35,5 @@ tar -czvf "$FOLDER"/vendor.tar.gz vendor
 
 popd || exit
 
-rm -rf /tmp/src
+rm -rf $TEMP
 set +x
