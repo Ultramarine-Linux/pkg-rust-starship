@@ -6,13 +6,13 @@
 
 Name:           rust-starship
 Version:        1.10.3
-Release:        %autorelease
+Release:        2%{?dist}
 Summary:        Minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️
 
 License:        ISC
 URL:            https://crates.io/crates/starship
 Source:         %{crates_source}
-Source1:        vendor.tar.gz
+#Source1:        vendor.tar.gz
 #Source2:        cargo-config.tar.gz
 # Automatically generated patch to strip foreign dependencies
 Patch:          starship-fix-metadata-auto.diff
@@ -20,6 +20,7 @@ Patch:          starship-fix-metadata-auto.diff
 ExclusiveArch:  %{rust_arches}
 
 BuildRequires:  rust-packaging >= 21
+BuildRequires:  fyra-srpm-macros
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
 BuildRequires:  git-core
@@ -139,21 +140,23 @@ use the "starship-battery" feature of the "%{crate}" crate.
 
 %prep
 %autosetup -n %{crate}-%{version_no_tilde} -p1
-%cargo_prep
+#cargo vendor
+%cargo_prep_online
+
 #cp %{SOURCE1} vendor.tar.gz
-tar -xzvf %{SOURCE1}
+#tar -xzvf %{SOURCE1}
 
 
 # heredoc the cargo config
 
-# replace source.local-registry with vendored-sources
-sed -i 's/"local-registry"/"vendored-sources"/g' .cargo/config
+# # replace source.local-registry with vendored-sources
+# sed -i 's/"local-registry"/"vendored-sources"/g' .cargo/config
 
-mkdir -p .cargo
-cat >> .cargo/config << EOF
-[source.vendored-sources]
-directory = "vendor"
-EOF
+# mkdir -p .cargo
+# cat >> .cargo/config << EOF
+# [source.vendored-sources]
+# directory = "vendor"
+# EOF
 
 cat .cargo/config
 echo 'git-core'
